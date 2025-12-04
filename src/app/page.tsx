@@ -16,7 +16,7 @@ export default function Home() {
         </div>
         <div className="w-full">
           <Image
-            src="/hero2.png"
+            src="/hero2.jpg"
             alt="Kitchen hero image 2"
             width={1920}
             height={1080}
