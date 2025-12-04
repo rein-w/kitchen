@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="bg-white">
-      <div className="px-4 sm:px-8 lg:px-16">
+      <div className="px-4 sm:px-8 lg:px-16 space-y-1.5">
         <div className="w-full">
           <Image
             src="/hero.jpg"
@@ -12,6 +12,15 @@ export default function Home() {
             height={1080}
             className="w-full h-auto object-cover"
             priority
+          />
+        </div>
+        <div className="w-full">
+          <Image
+            src="/hero2.png"
+            alt="Kitchen hero image 2"
+            width={1920}
+            height={1080}
+            className="w-full h-auto object-cover"
           />
         </div>
       </div>

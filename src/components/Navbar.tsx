@@ -13,7 +13,7 @@ export default function Navbar() {
   return (
     <nav className="bg-white">
       <div className="px-4 sm:px-8 lg:px-16">
-        <div className="flex justify-between items-center h-[60px] md:h-[80px]">
+        <div className="flex justify-between items-center h-[72px] md:h-[96px]">
           <div className="flex-shrink-0">
             <Link href="/">
               <Image
@@ -31,13 +31,13 @@ export default function Navbar() {
           <div className="hidden md:flex items-center space-x-8">
             <Link
               href="/about"
-              className="text-gray-500 hover:text-black transition-colors font-light"
+              className="text-gray-600 hover:text-black transition-colors font-light"
             >
               About
             </Link>
             <Link
               href="/events"
-              className="text-gray-500 hover:text-black transition-colors font-light"
+              className="text-gray-600 hover:text-black transition-colors font-light"
             >
               Events
             </Link>
@@ -82,7 +82,7 @@ export default function Navbar() {
         }`}
       >
         <div className="px-4 sm:px-8">
-          <div className="flex justify-between items-center h-[60px]">
+          <div className="flex justify-between items-center h-[72px]">
             <Link href="/" onClick={closeMenu}>
               <Image
                 src="/logo.png"
@@ -104,7 +104,7 @@ export default function Navbar() {
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-center h-[calc(100vh-60px)] space-y-8">
+        <div className="flex flex-col items-center justify-start pt-24 h-[calc(100vh-72px)] space-y-8">
           <Link
             href="/about"
             className="text-xl text-gray-700 hover:text-black transition-colors font-light"
