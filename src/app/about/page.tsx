@@ -24,23 +24,19 @@ export default function AboutPage() {
 
           <div className="space-y-5 text-gray-700 font-light leading-snug text-[14px]">
             <p>
-              Rein is a personal culinary project born from a deep passion for cooking and a desire to share memorable dining experiences with friends and loved ones.
+              Cooking has always been a place where I can fully immerse myself- where careful thinking, connected ideas, testing, refining, and creating all come together with purpose. Unlike much of life, the kitchen offers a single, honest outcome: good or bad food. Did it put a smile on your face? Did it warm your stomach? The answer is always immediate and real.
             </p>
 
             <p>
-              What started as experimental dinners in a home kitchen has evolved into intimate, reservation-only events where guests can enjoy thoughtfully crafted multi-course menus in a relaxed, welcoming atmosphere.
+              Rein, not coincidentally my nickname, is a simple moniker for my cooking persona. It's my way of pushing myself to be more deliberate, more disciplined, and more creative. A space to set deadlines, honour the process, and bring true intention to preparation and execution.
             </p>
 
             <p>
-              Each menu is carefully curated to highlight seasonal ingredients, drawing inspiration from global cuisines while maintaining a focus on simplicity and flavour. The goal is never perfection, but rather the joy of cooking and the connections made around the table.
+              This blog is where I share that journey with you. I hope you enjoy what you find here, and I'm grateful you've taken the time to stop by.
             </p>
 
             <p>
-              This is not a commercial restaurant — it is a passion project, a space to learn, experiment, and grow as a home cook. Every event is an opportunity to refine techniques, try new ideas, and create dishes that bring people together.
-            </p>
-
-            <p>
-              Thank you for being part of this journey.
+              See you soon.
             </p>
           </div>
         </div>
