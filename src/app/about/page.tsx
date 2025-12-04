@@ -1,4 +1,4 @@
-import Image from "next/image";
+import OptimizedImage from "@/components/OptimizedImage";
 
 export default function AboutPage() {
   return (
@@ -6,8 +6,8 @@ export default function AboutPage() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-0">
         {/* Left: Image */}
         <div className="px-0 sm:px-8 lg:px-16">
-          <Image
-            src="/about.jpg"
+          <OptimizedImage
+            src="about.jpg"
             alt="About Rein"
             width={1200}
             height={1600}

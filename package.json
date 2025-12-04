@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-  "build": "next build",
-  "dev": "next dev",
-  "start": "next start"
-},
+    "optimize-images": "node scripts/optimize-images.mjs",
+    "prebuild": "npm run optimize-images",
+    "build": "next build",
+    "dev": "next dev",
+    "start": "next start"
+  },
   "dependencies": {
     "next": "16.0.6",
     "react": "19.2.0",
@@ -19,6 +21,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.0.6",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

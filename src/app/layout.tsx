@@ -6,14 +6,16 @@ import Footer from "@/components/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
+  weight: ["300", "400"],
   variable: "--font-inter",
+  display: "swap",
 });
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["300", "400"],
   variable: "--font-serif",
+  display: "swap",
 });
 
 export const metadata: Metadata = {

@@ -1,14 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const closeMenu = () => setIsMenuOpen(false);
+  const toggleMenu = useCallback(() => setIsMenuOpen((prev) => !prev), []);
+  const closeMenu = useCallback(() => setIsMenuOpen(false), []);
 
   return (
     <nav className="bg-white">
@@ -16,14 +15,19 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-[72px] md:h-[96px]">
           <div className="flex-shrink-0">
             <Link href="/">
-              <Image
-                src="/logo.png"
-                alt="Rein"
-                width={78}
-                height={31}
-                className="h-[26px] md:h-8 w-auto"
-                priority
-              />
+              <picture>
+                <source srcSet="/optimized/logo.webp" type="image/webp" />
+                <img
+                  src="/optimized/logo.png"
+                  alt="Rein"
+                  width={78}
+                  height={31}
+                  className="h-[26px] md:h-8 w-auto"
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
+                />
+              </picture>
             </Link>
           </div>
 
@@ -84,13 +88,18 @@ export default function Navbar() {
         <div className="px-4 sm:px-8">
           <div className="flex justify-between items-center h-[72px]">
             <Link href="/" onClick={closeMenu}>
-              <Image
-                src="/logo.png"
-                alt="Rein"
-                width={78}
-                height={31}
-                className="h-[26px] w-auto"
-              />
+              <picture>
+                <source srcSet="/optimized/logo.webp" type="image/webp" />
+                <img
+                  src="/optimized/logo.png"
+                  alt="Rein"
+                  width={78}
+                  height={31}
+                  className="h-[26px] w-auto"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </Link>
             <button
               className="flex flex-col justify-center items-center w-10 h-10 space-y-1.5"

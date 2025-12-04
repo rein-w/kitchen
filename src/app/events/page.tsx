@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useCallback } from "react";
 
 interface MenuItem {
   name: string;
@@ -79,7 +79,7 @@ export default function EventsPage() {
     );
   }, [selectedFilter]);
 
-  const toggleEvent = (eventId: string) => {
+  const toggleEvent = useCallback((eventId: string) => {
     setExpandedEvents((prev) => {
       const newSet = new Set(prev);
       if (newSet.has(eventId)) {
@@ -89,7 +89,7 @@ export default function EventsPage() {
       }
       return newSet;
     });
-  };
+  }, []);
 
   return (
     <div className="bg-white pt-10 md:pt-16 pb-12 md:pb-24">
@@ -165,11 +165,12 @@ export default function EventsPage() {
                         Menu
                       </p>
                       <div className="space-y-2.5">
-                        {event.menu.map((item, index) => (
-                          item.name === "---" ? (
-                            <div key={index} className="py-2" />
+                        {event.menu.map((item, index) => {
+                          const key = `${event.id}-menu-${index}`;
+                          return item.name === "---" ? (
+                            <div key={key} className="py-2" />
                           ) : (
-                            <div key={index} className="flex flex-col">
+                            <div key={key} className="flex flex-col">
                               <span className="text-[14px] text-black font-light">
                                 {item.name}
                               </span>
@@ -179,8 +180,8 @@ export default function EventsPage() {
                                 </span>
                               )}
                             </div>
-                          )
-                        ))}
+                          );
+                        })}
                       </div>
                     </div>
                   </div>

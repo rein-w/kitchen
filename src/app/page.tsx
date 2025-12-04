@@ -1,12 +1,12 @@
-import Image from "next/image";
+import OptimizedImage from "@/components/OptimizedImage";
 
 export default function Home() {
   return (
     <div className="bg-white">
       <div className="px-4 sm:px-8 lg:px-16 space-y-1.5">
         <div className="w-full">
-          <Image
-            src="/hero.jpg"
+          <OptimizedImage
+            src="hero.jpg"
             alt="Kitchen hero image"
             width={1920}
             height={1080}
@@ -15,8 +15,8 @@ export default function Home() {
           />
         </div>
         <div className="w-full">
-          <Image
-            src="/hero2.jpg"
+          <OptimizedImage
+            src="hero2.jpg"
             alt="Kitchen hero image 2"
             width={1920}
             height={1080}
