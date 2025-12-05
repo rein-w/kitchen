@@ -24,7 +24,7 @@ const eventsData: EventData[] = [
       { name: "Sydney rock oyster" },
       { name: "Kingfish crudo, navel oranges" },
       { name: "Straciatella, black plum, fennel seeds" },
-      { name: "Australian banana prawn cakes, panko" },
+      { name: "Prawn cakes, panko" },
       { name: "---" },
       { name: "Duck breast, pomelo salad" },
       { name: "NY strip wagyu" },
@@ -129,8 +129,13 @@ export default function EventsPage() {
                 key={event.id}
                 className="border border-gray-200 bg-white"
               >
-                {/* Event Header */}
-                <div className="px-5 py-5 md:px-6 md:py-6">
+                {/* Event Header - Entire area is clickable */}
+                <button
+                  onClick={() => toggleEvent(event.id)}
+                  className="w-full px-5 py-5 md:px-6 md:py-6 text-left cursor-pointer hover:bg-gray-50 active:bg-gray-50 transition-colors touch-manipulation"
+                  aria-expanded={isExpanded}
+                  aria-controls={`event-menu-${event.id}`}
+                >
                   <div className="flex justify-between items-start">
                     <div className="flex-1">
                       <h2 className="text-lg md:text-xl font-light text-black mb-1.5">
@@ -141,20 +146,20 @@ export default function EventsPage() {
                         <span className="hidden sm:inline">{formatDate(event.date)}</span>
                       </p>
                     </div>
-                    <button
-                      onClick={() => toggleEvent(event.id)}
-                      className="ml-4 w-10 h-10 flex items-center justify-center text-gray-500 hover:text-black active:text-black transition-colors touch-manipulation"
-                      aria-label={isExpanded ? "Collapse menu" : "Expand menu"}
+                    <span
+                      className="ml-4 w-10 h-10 flex items-center justify-center text-gray-500 group-hover:text-black transition-colors"
+                      aria-hidden="true"
                     >
                       <span className="text-2xl font-light select-none">
                         {isExpanded ? "−" : "+"}
                       </span>
-                    </button>
+                    </span>
                   </div>
-                </div>
+                </button>
 
                 {/* Expandable Menu */}
                 <div
+                  id={`event-menu-${event.id}`}
                   className={`overflow-hidden transition-all duration-300 ease-in-out ${
                     isExpanded ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
                   }`}
