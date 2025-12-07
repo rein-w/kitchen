@@ -31,7 +31,7 @@ const eventsData: EventData[] = [
       { name: "Conchigliette, lemon, parsley" },
       { name: "Roasted cabbage, artichoke, eggplant, chilli" },
       { name: "---" },
-      { name: "Flan" },
+      { name: "Vanilla icecream, flan" },
       { name: "Melona" },
     ],
   },
