@@ -21,9 +21,9 @@ const eventsData: EventData[] = [
     date: "2025-12-06",
     menu: [
       { name: "A.P. sourdough" },
-      { name: "Sydney rock oyster" },
+      { name: "St. Helens oysters" },
       { name: "Kingfish crudo, navel oranges" },
-      { name: "Straciatella, black plum, fennel seeds" },
+      { name: "Straciatella, black plum, guava jam" },
       { name: "Prawn cakes, panko" },
       { name: "---" },
       { name: "Duck breast, pomelo salad" },
