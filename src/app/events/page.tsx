@@ -35,6 +35,32 @@ const eventsData: EventData[] = [
       { name: "Melona" },
     ],
   },
+  {
+    id: "2",
+    name: "Richard's Birthday",
+    date: "2024-09-07",
+    menu: [
+      { name: "Sicilian olives, duck salami" },
+      { name: "Burrata, roasted cherry tomatoes, pesto" },
+      { name: "Charred mackerel, salsa verde" },
+      { name: "---" },
+      { name: "Barramundi, potato puree, green oil" },
+      { name: "Eggplant, miso" },
+      { name: "---" },
+      { name: "Custard tart" },
+    ],
+  },
+  {
+    id: "3",
+    name: "Superwomen's Night Out",
+    date: "2024-02-03",
+    menu: [
+      { name: "*Entree only*" },
+      { name: "Chawanmushi, lobster, lumpfish caviar" },
+      { name: "Kingfish carpaccio, yuzu pepper" },
+      { name: "Beef tartare" },
+    ],
+  },
 ];
 
 function formatDate(dateString: string, short: boolean = false): string {
@@ -172,12 +198,14 @@ export default function EventsPage() {
                       <div className="space-y-2.5">
                         {event.menu.map((item, index) => {
                           const key = `${event.id}-menu-${index}`;
+                          const isItalic = item.name.startsWith("*") && item.name.endsWith("*");
+                          const displayName = isItalic ? item.name.slice(1, -1) : item.name;
                           return item.name === "---" ? (
                             <div key={key} className="py-2" />
                           ) : (
                             <div key={key} className="flex flex-col">
-                              <span className="text-[14px] text-black font-light">
-                                {item.name}
+                              <span className={`text-[14px] text-black font-light ${isItalic ? "italic text-gray-500" : ""}`}>
+                                {displayName}
                               </span>
                               {item.description && (
                                 <span className="text-[13px] text-gray-500 font-light">
